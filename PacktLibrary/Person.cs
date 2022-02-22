@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using static System.Console;
+using System.Collections.Generic;
 
 namespace Packt.Shared
 {
@@ -12,5 +13,6 @@ namespace Packt.Shared
         public DateTime DateOfBirth;
         public WondersOfTheAncientWorld FavoriteAncientWonder;
         public WondersOfTheAncientWorld BucketList;
+        public List<Person> Children = new List<Person>();
     }
 }
