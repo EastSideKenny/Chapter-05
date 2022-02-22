@@ -5,7 +5,7 @@ using static System.Console;
 
 namespace Packt.Shared
 {
-    public class Person : object
+    public partial class Person
     {
         // fields
         public string Name;
