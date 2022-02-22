@@ -37,8 +37,7 @@ WriteLine($"{bob.Name}'s bucket list is {bob.BucketList}");
 bob.Children.Add(new Person { Name = "Alfred" }); // C# 3.0 and later
 bob.Children.Add(new() { Name = "Zoe" }); // C# 9.0 and later
 
-WriteLine(
-    $"{bob.Name} has {bob.Children.Count} children:");
+WriteLine($"{bob.Name} has {bob.Children.Count} children:");
 
 for (int childIndex = 0; childIndex < bob.Children.Count; childIndex++)
 {
@@ -82,3 +81,24 @@ WriteLine(format:
     arg0: gunny.Name,
     arg1: gunny.HomePlanet,
     arg2: gunny.Instantiated);
+
+bob.WriteToConsole();
+WriteLine(bob.GetOrigin());
+
+(string, int) fruit = bob.GetFruit();
+
+WriteLine($"{fruit.Item1}, {fruit.Item2} there are.");
+
+var fruitNamed = bob.GetNamedFruit();
+
+WriteLine($"There are {fruitNamed.Number} {fruitNamed.Name}.");
+
+var thing1 = ("Neville", 4);
+WriteLine($"{thing1.Item1} has {thing1.Item2} children");
+
+var thing2 = (bob.Name, bob.Children.Count);
+WriteLine($"{thing2.Name} has {thing2.Count} children");
+
+(string fruitName, int fruitNumber) = bob.GetFruit();
+
+WriteLine($"Deconstructed: {fruitName}, {fruitNumber}");
