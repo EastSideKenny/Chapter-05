@@ -209,3 +209,27 @@ foreach (object passenger in passengers)
     WriteLine($"Flight costs {flightCost:C} for {passenger}");
 }
 
+ImmutablePerson jeff = new()
+{
+    FirstName = "Jeff",
+    LastName = "Winger"
+};
+
+//jeff.FirstName = "Geoff";
+
+ImmutableVehicle car = new()
+{
+    Brand = "Mazda MX-5 RF",
+    Color = "Soul Red Crystal Metallic",
+    Wheels = 4
+};
+
+ImmutableVehicle repaintedCr = car with { Color = "PolyMetal Grey Metallic" };
+
+WriteLine($"Original car color was {car.Color}.");
+WriteLine($"New car color is {repaintedCr.Color}");
+
+
+ImmutableAnimal oscar = new("Oscar", "Labrador");
+var (who, what) = oscar; // calls deconstruct method
+WriteLine($"{who} is a {what}.");
